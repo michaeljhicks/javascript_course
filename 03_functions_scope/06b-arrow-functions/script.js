@@ -1,24 +1,42 @@
-// Function Declaration vs Expression
+// Arrow Functions - introduced to JS in 2015 via ES6 update
+// Advantages - more compact, implicit return, lexical scope
 
-// FUNCTION DECLARATION - start with the word FUNCTION, then name it...
-// does not need semicolon at end
-// HOISTING allows the console.log on line 10 to be placed above the addDollarSign, and it'll still run
-function addDollarSign(value) {
-   return '$' + value;
-}
+// function add(a, b) {
+//    return a + b;
+// }
 
-console.log(addDollarSign(100));
+// TURN THIS
+// const add = function(a,b) {
+//    return a + b;
+// };
 
-
-// FUNCTION EXPRESSION - where you create a variable
-// needs semicolon added to end 
-const addPlusSign = function(value) {
-   return '+' + value;
+// into THIS
+// ARROW FUNCTION SYNTAX
+const add = (a,b) => {
+   return a + b;
 };
+// you can shorten it further. remove {} and return 
+// this is IMPLICIT RETURN
+const subtract = (a,b) => a - b;
 
-console.log(addPlusSign(200));
+// SINGLE PARAMETER - no need for parenthesis if you have a single param
+const double = a => a * 2;
 
+// Returning an object - you need to encase {} with parenthesis
+const createObject = () => ({
+   name: 'Mike',
+});
 
-// Differences between Function Declaration and Function Express = Hoisting
-// HOISTING = the process of moving all the function and variable declarations to the top of the current scope before the code is run
-// NOTE: only Function Declarations are available before the code is even run 
+// Arrow Function using forEach on Array
+const numbers = [1,2,3,4,5];
+
+numbers.forEach(function (n) {
+   console.log(n);
+});
+// Arrow function in a call back
+numbers.forEach(n => console.log(n));
+// a CALL BACK is when you pass a function into another function
+console.log(add(3,2));
+console.log(subtract(10,5));
+console.log(double(10));
+console.log(createObject());
