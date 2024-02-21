@@ -1,45 +1,30 @@
-// BLOCK LEVEL SCOPE
-// VAR is not block level scoped, meaning you can access var anywhere outside of the block
-// VAR is function scoped, meaning is stays inside the function
-// VAR (like bar below) will be added to the window object (check window in console)
+// How scope works with nested functions and nested blocks
+// Nested functions relate to something called CLOSURES
 
-const x = 100;
-const foo = 1;
-var bar = 2;
+function first(){
+   const x = 100;
 
-if (true) {
-   const y = 50
-   console.log(x + y);
+   function second() {
+      const y = 200
+      console.log(x + y);
+   }
+   // for second() to run, you must call it within first() - below
+   second();
 }
-
-// console.log(y);
-
-for (let i = 0; i <= 10; i++) {
-   console.log(i);   
-};
-
-// console.log(i);
+// Call first() here, which will run second();
+first();
 
 
-// VAR is not restricted to the if block. This is not good because you 
-// want your variables scoped
 
-// DO NOT USE VAR
+// from the child - which is second() - you can access any variables in the parent - which is first()
+// It doesn't work the other way around
+
+// same rules apply to blocks
 if (true) {
-   const a = 500;
-   let b = 600
-   var c = 700
-};
+   const x = 100;
 
-console.log(c);
-
-// VAR is function scoped, but NOT block scoped
-function run(){
-   var d = 100;
-   console.log(d);
+   if (x === 100) {
+      const y = 200;
+      console.log(x+y);
+   }
 }
-
-run();
-
-// d will throw an error
-// console.log(d);
