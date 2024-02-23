@@ -1,32 +1,35 @@
-if (true) {
-    console.log('This is true');
-}
+const d = new Date(10, 30, 2022, 6, 0, 0);
+const hour = d.getHours()
 
-if (false) {
-    console.log('This is NOT true');
-}
-
-const x = 10;
-const y = 5
-
-if (x > y) {
-    console.log(`${x} is greater than ${y}`);
-}
-
-// if (x === y) {
-//     console.log(`${x} is equal to ${y}`);
+// if (hour < 12) {
+//     console.log('Good Morning');
+// } else if (hour < 18) {
+//     console.log('Good Afternoon');
+// } else {
+//     console.log('Good Night');
 // }
 
-if (x === y) {
-    console.log(`${x} is equal to ${y}`);
+// Nested If
+
+if (hour < 12) {
+    console.log('Good Morning');
+    if (hour === 6) {
+        console.log('Wake Up!');
+    }
+} else if (hour < 18) { 
+    console.log('Good Afternoon');
 } else {
-    console.log(`${x} is NOT equal to ${y}`);    
+    console.log('Good Night');
+    if (hour >= 20) {
+        console.log('Go to bed!');
+    }
 }
 
-/* 
-If statement blocks have their own scope. Any variable created inside of if statement, stay inside
-*/
+// Multiple conditions within an statement
+if (hour >= 7 && hour < 15) {
+    console.log('It is work time!');
+}
 
-
-// Shorthand If - you can remove the curly braces for a clean single line. Not recommended
-if (x >= y) console.log(`${x} is greater than or equal to ${y}`);
+if (hour === 6 || hour === 20) {
+    console.log('Brush your teeth');
+}
