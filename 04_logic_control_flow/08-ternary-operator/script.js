@@ -45,3 +45,4 @@ const redirect = auth ? (alert('Welcome to the dashboard'), '/dashboard') : (ale
 auth ? console.log('Welcome to dashboard'): null;
 // shorthand version of above(line45) because there is no else statement. use &&
 auth && console.log('Welcome to the dashboard');
+
