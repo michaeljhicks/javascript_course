@@ -25,9 +25,43 @@
 // }
 
 
-/**  NEST LOOPS */
-for (let i = 0; i <= 10; i++) {
-    console.log('Number ' + i);
+/**  NESTED LOOPS 
+ * 1st level variable is generally i
+ * 2nd level variable is generally j (you simply can't reuse i in the nesting)
+ * if you accidently use i again, you'll get the infinite loop
+*/
+
+// for (let i = 1; i <= 10; i++) {
+//     console.log('Number ' + i);
+
+//     for (let j = 1; j <= 10; j++) {
+//         console.log(`${i} * ${j} = ${i * j}`);       
+//     }
+// }
+
+
+
+
+/** LOOP THROUGH AN ARRAY
+ * Don't normally use a for loop for an array, but you still can if you want to
+ */
+
+const names = ['Brad', 'Matt', 'Kevin', 'Kyle', 'Steve'];
+
+for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+    // i now represents the index position in the array
 }
 
+for (let i = 0; i < names.length; i++) {
+    if (i === 2) {
+        console.log(names[i] + ' is the best');
+    } else {
+        console.log(object);
+    }
+}
 
+/** Above
+ * initialize your variable (i)
+ * then, as long as i is less than the length of the array (names.length)
+ */
