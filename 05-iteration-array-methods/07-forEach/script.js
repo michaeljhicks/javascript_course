@@ -11,12 +11,12 @@ const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];
 // console.log(socials.__proto__);
 
 
-// socials.forEach(function (item) {
-//     console.log(item);
-// });
+socials.forEach(function (item) {
+    console.log(item);
+});
 
-//          you can also do it like this
-// socials.forEach((item) => console.log(item));
+         you can also do it like this
+socials.forEach((item) => console.log(item));
 
 socials.forEach((item, index, arr) => {
     console.log(item);
